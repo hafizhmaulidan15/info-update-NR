@@ -12128,3 +12128,250 @@ td.product-thumbnail img {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+/* ======================================================== */
+/* [BARU] STYLE UNTUK SEKSI KURIKULUM GRID (VERSI LATAR UNGU) */
+/* ======================================================== */
+
+.it-kurikulum-section {
+    background-color: #5f438a; /* WARNA BARU ANDA */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Mengubah warna judul agar terbaca */
+.it-kurikulum-section .it-section-subtitle {
+    color: #fff212; /* Diubah jadi kuning agar kontras */
+}
+.it-kurikulum-section .it-section-title {
+    color: #ffffff; /* Diubah jadi putih */
+}
+
+/* Mengubah warna teks paragraf */
+.it-kurikulum-section .it-kurikulum-text p {
+    font-size: 18px;
+    color: #e0e0e0; /* Diubah jadi putih pudar */
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Mengubah warna teks list */
+.it-kurikulum-section .it-kurikulum-list ul li {
+    font-size: 17px;
+    color: #ffffff; /* Diubah jadi putih */
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Mengubah ikon centang menjadi putih */
+.it-kurikulum-section .it-kurikulum-list ul li::before {
+    content: '\f00c';
+    font-family: var(--it-ff-fontawesome);
+    font-weight: 900;
+    color: #ffffff; /* Diubah jadi putih */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 16px;
+}
+
+/* Grid Kurikulum */
+.it-kurikulum-section .curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+}
+
+/* Card Ikon */
+.it-kurikulum-section .icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+.it-kurikulum-section .icon-card:hover {
+    transform: translateY(-0.5rem);
+}
+
+/* Kotak Ikon (Background Berwarna) */
+.it-kurikulum-section .icon-box {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Skema Warna Gradient & Shadow */
+.it-kurikulum-section .color-orange {
+    background-image: linear-gradient(to bottom right, #fbbf24, #f97316);
+    box-shadow: 0 10px 20px -5px #f9731666, 0 4px 6px -2px #f9731666;
+}
+.it-kurikulum-section .color-blue {
+    background-image: linear-gradient(to bottom right, #38bdf8, #2563eb);
+    box-shadow: 0 10px 20px -5px #2563eb66, 0 4px 6px -2px #2563eb66;
+}
+.it-kurikulum-section .color-pink {
+    background-image: linear-gradient(to bottom right, #f472b6, #ef4444);
+    box-shadow: 0 10px 20px -5px #ef444466, 0 4px 6px -2px #ef444466;
+}
+.it-kurikulum-section .color-purple {
+    background-image: linear-gradient(to bottom right, #a855f7, #4f46e5);
+    box-shadow: 0 10px 20px -5px #4f46e566, 0 4px 6px -2px #4f46e566;
+}
+
+/* Lapisan Kilap (Gloss) di dalam kotak */
+.it-kurikulum-section .icon-box-gloss {
+    position: absolute;
+    inset: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    z-index: 5;
+}
+
+/* Ikon SVG atau Font Awesome di dalam kotak */
+.it-kurikulum-section .icon-box svg,
+.it-kurikulum-section .icon-box i {
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+    line-height: 1;
+    color: white;
+    z-index: 10;
+}
+
+/* Teks di bawah Ikon */
+.it-kurikulum-section .icon-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: #ffffff; /* Diubah jadi putih */
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.it-kurikulum-section .icon-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #e0e0e0; /* Diubah jadi putih pudar */
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Judul Utama */
+.it-kurikulum-section .main-title {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #ffffff; /* Diubah jadi putih */
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+}
+
+/* Ilustrasi di Bawah */
+.it-kurikulum-section .illustration-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.it-kurikulum-section .illustration-wrapper img {
+    max-width: 20rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Aturan Responsive (Media Queries) --- */
+@media (min-width: 640px) {
+    .it-kurikulum-section .curriculum-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem 1.5rem;
+    }
+    .it-kurikulum-section .icon-box {
+        width: 8rem;
+        height: 8rem;
+    }
+    .it-kurikulum-section .icon-box svg,
+    .it-kurikulum-section .icon-box i {
+        width: 5rem;
+        height: 5rem;
+        font-size: 5rem;
+    }
+    .it-kurikulum-section .icon-text h3 {
+        font-size: 1rem;
+    }
+    .it-kurikulum-section .icon-text p {
+        font-size: 0.875rem;
+    }
+    .it-kurikulum-section .main-title {
+        font-size: 3rem;
+        margin-top: 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .it-kurikulum-section .curriculum-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .it-kurikulum-section .main-title {
+        font-size: 3.75rem;
+    }
+    .it-kurikulum-section .illustration-wrapper img {
+        max-width: 28rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .it-kurikulum-section .curriculum-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .it-kurikulum-section .illustration-wrapper img {
+        max-width: 32rem;
+    }
+}
+
+/* == START: Custom Teaching Card Styles == */
+
+.custom-teaching-card {
+  background-color: #6b21a8; /* Warna ungu dari TeachingMethodCard.tsx */
+  color: #ffffff; /* Teks putih dari TeachingMethodCard.tsx */
+  padding: 32px; /* p-8 */
+  border-radius: 16px; /* rounded-2xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  height: 208px; /* h-52 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; /* transisi */
+}
+
+.custom-teaching-card:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+}
+
+.custom-teaching-card-title {
+  font-size: 30px; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 16px; /* mb-4 */
+  color: #ffffff; /* pastikan judul juga putih */
+}
+
+.custom-teaching-card p {
+  font-size: 16px; /* text-base */
+  color: #ffffff; /* pastikan paragraf juga putih */
+}
+
+/* == END: Custom Teaching Card Styles == */
