@@ -904,7 +904,7 @@
                      <div class="swiper-container it-brand-slider">
                            <div class="swiper-wrapper">
                               <div class="swiper-slide single-brand">
-                                 <img src="assets/img/brand/mizan (2).png" alt="Brand">
+                                 <img src="assets/img/brand/FM.png" alt="Brand">
                               </div>
                               <div class="swiper-slide single-brand">
                                  <img src="assets/img/brand/Bina Bangsa.png" alt="Brand">
@@ -940,7 +940,7 @@
                                  <img src="assets/img/brand/Lazu.png" alt="Brand">
                               </div>
                               <div class="swiper-slide single-brand">
-                                 <img src="assets/img/brand/FM.png" alt="Brand">
+                                 <img src="assets/img/brand/mizan (2).png" alt="Brand">
                               </div>
                            </div>
                      </div>
@@ -1196,74 +1196,40 @@
       </div>
       <!-- program-area-end -->
 
-      <!-- contact-area-start -->
-      <div class="it-contact-area pt-115 pb-120 p-relative black-bg fix">   
-         <div class="it-contact-shape-1 d-none d-md-block">
-            <img src="assets/img/contact/shape-1-1.png" alt="">
-         </div>
-         <div class="it-contact-shape-2 d-none d-md-block">
-            <img src="assets/img/contact/shape-1-2.png" alt="">
-         </div>
-         <div class="container">
-            <div class="row">               
-               <div class="offset-lg-5 col-lg-7">
-                  <div class="it-contact-form-box z-index">
-                     <div class="it-contact-tiitle-box mb-65">
-                        <span class="it-section-subtitle" style="color:#fff212;">Kontak Kami</span>
-                        <h3 class="it-section-title text-white">Kami Senang Mendengar <br>dari Anda</h3>
-                     </div>
-                     <form action="#">
-                        <div class="row">
-                           <div class="col-md-6 mb-20">
-                              <div class="it-contact-input-box">
-                                 <input type="text" placeholder="Nama:">
-                              </div>
-                           </div>
-                           <div class="col-md-6 mb-20">
-                              <div class="it-contact-input-box">
-                                 <input type="text" placeholder="Tujuan:">
-                              </div>
-                           </div>
-                           <div class="col-md-6 mb-20">
-                              <div class="it-contact-input-box">
-                                 <input type="email" placeholder="Alamat Email:">
-                              </div>
-                           </div>
-                           <div class="col-md-6 mb-20">
-                              <div class="it-contact-input-box">
-                                 <input type="text" placeholder="Nomor:">
-                              </div>
-                           </div>
-                           <div class="col-md-12 mb-20">
-                              <div class="it-contact-textarea-box">
-                                 <textarea placeholder="Tulis Disini..."></textarea>
-                              </div>
-                           </div>
-                        </div>
-                     </form>
-                     <div class="it-contact-button">
-                        <a class="it-btn theme-style circle-effect" href="#">
-                           <span>BOOK FREE TRIAL
-                              <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M13.6875 7.71875C14.0938 7.34375 14.0938 6.6875 13.6875 6.3125L8.6875 1.3125C8.3125 0.90625 7.65625 0.90625 7.28125 1.3125C6.875 1.6875 6.875 2.34375 7.28125 2.71875L10.5625 6H1C0.4375 6 0 6.46875 0 7C0 7.5625 0.4375 8 1 8H10.5625L7.28125 11.3125C6.875 11.6875 6.875 12.3438 7.28125 12.7188C7.65625 13.125 8.3125 13.125 8.6875 12.7188L13.6875 7.71875Z"
-                                    fill="currentcolor" />
-                              </svg>
-                           </span>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="it-contact-map-box">
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.6912416631963!2d106.7810299749204!3d-6.560603293432585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c3f8ed6256ef%3A0x8dbff6e9d8372161!2sNanoRobotic!5e0!3m2!1sid!2sid!4v1758684773374!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>         </div>
+      
+      <!-- === YouTube Carousel (start) === -->
+<section class="it-yt-carousel pt-100 pb-70 grey-bg" id="yt-carousel">
+  <div class="container text-center">
+    <div class="row justify-content-center mb-30">
+      <div class="col-12">
+        <h2 class="it-section-title mb-10">Aktifitas Kami</h2>
+        <p class="it-section-sub">Beyond Eclectic Mind • Klik video di bawah ini untuk menonton</p>
       </div>
-      <!-- contact-area-end -->
+    </div>
+
+    <div class="it-ytc">
+      <button class="it-ytc__arrow it-ytc__arrow--left" id="ytPrev" aria-label="Sebelumnya">❮</button>
+
+      <div class="it-ytc__viewport" id="ytViewport" aria-roledescription="carousel">
+        <div class="it-ytc__track" id="ytTrack" role="group" aria-label="Daftar video"></div>
+      </div>
+
+      <button class="it-ytc__arrow it-ytc__arrow--right" id="ytNext" aria-label="Berikutnya">❯</button>
+      <div class="it-ytc__dots" id="ytDots" role="tablist" aria-label="Halaman"></div>
+    </div>
+  </div>
+
+  <!-- Modal Player -->
+  <div class="it-ytc__modal" id="ytModal" aria-modal="true" role="dialog" aria-label="YouTube Player">
+    <div class="it-ytc__player" id="ytPlayer"></div>
+    <button class="it-ytc__close" id="ytClose" aria-label="Tutup">✕</button>
+  </div>
+</section>
+<!-- === YouTube Carousel (end) === -->
+
 
       <!-- shop-area-start -->
-      <div class="it-shop-area pt-115 pb-90">
+      <div class="it-shop-area pt-20 pb-90">
          <div class="container">
             <div class="row">
                <div class="col-xl-12">
@@ -1376,7 +1342,7 @@
       <!-- shop-area-end -->
 
       <!-- blog-area-start -->
-      <div class="it-blog-area p-relative fix pt-115 pb-90" >
+      <div class="it-blog-area p-relative fix pt-20 pb-90" >
          <div class="it-blog-bg" data-background="assets/img/blog/Background Blog.png"></div>
          <div class="container">
             <div class="row align-items-center">
@@ -1409,7 +1375,7 @@
                            <div class="it-blog-meta mb-25">
                               <span>15 March, 2024</span>
                            </div>
-                           <h4 class="it-blog-title pb-25"><a href="blog-details.html">STEAM: Kunci Melahirkan Generasi Kreatif, Kritis, dan Inovatif</a></h4>                
+                           <h4 class="it-blog-title pb-25"><a href="blog-details.html">STEAM: Kunci Melahirkan Generasi Kreatif, Kritis, <br> dan Inovatif</a></h4>                
                         </div>
                         <div class="it-blog-button">
                            <a class="it-btn-sm circle-effect" href="blog-details.html">
@@ -1436,7 +1402,7 @@
                            <div class="it-blog-meta mb-25">
                               <span>23 Feb, 2025</span>
                            </div>
-                           <h4 class="it-blog-title pb-25"><a href="blog-details.html">Menjadi Orang Tua Bijak di Era Digital</a></h4>                
+                           <h4 class="it-blog-title pb-25"><a href="blog-details.html">Menjadi Orang Tua Bijak <br> di Era Digital</a></h4>                
                         </div>
                         <div class="it-blog-button">
                            <a class="it-btn-sm circle-effect" href="blog-details.html">
@@ -1457,6 +1423,74 @@
          </div>
       </div>
       <!-- blog-area-end -->
+
+<!-- contact-area-start -->
+      <div class="it-contact-area pt-115 pb-120 p-relative black-bg fix">   
+         <div class="it-contact-shape-1 d-none d-md-block">
+            <img src="assets/img/contact/shape-1-1.png" alt="">
+         </div>
+         <div class="it-contact-shape-2 d-none d-md-block">
+            <img src="assets/img/contact/shape-1-2.png" alt="">
+         </div>
+         <div class="container">
+            <div class="row">               
+               <div class="offset-lg-5 col-lg-7">
+                  <div class="it-contact-form-box z-index">
+                     <div class="it-contact-tiitle-box mb-65">
+                        <span class="it-section-subtitle" style="color:#fff212;">Kontak Kami</span>
+                        <h3 class="it-section-title text-white">Kami Senang Mendengar <br>dari Anda</h3>
+                     </div>
+                     <form action="#">
+                        <div class="row">
+                           <div class="col-md-6 mb-20">
+                              <div class="it-contact-input-box">
+                                 <input type="text" placeholder="Nama:">
+                              </div>
+                           </div>
+                           <div class="col-md-6 mb-20">
+                              <div class="it-contact-input-box">
+                                 <input type="text" placeholder="Tujuan:">
+                              </div>
+                           </div>
+                           <div class="col-md-6 mb-20">
+                              <div class="it-contact-input-box">
+                                 <input type="email" placeholder="Alamat Email:">
+                              </div>
+                           </div>
+                           <div class="col-md-6 mb-20">
+                              <div class="it-contact-input-box">
+                                 <input type="text" placeholder="Nomor:">
+                              </div>
+                           </div>
+                           <div class="col-md-12 mb-20">
+                              <div class="it-contact-textarea-box">
+                                 <textarea placeholder="Tulis Disini..."></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                     <div class="it-contact-button">
+                        <a class="it-btn theme-style circle-effect" href="#">
+                           <span>BOOK FREE TRIAL
+                              <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M13.6875 7.71875C14.0938 7.34375 14.0938 6.6875 13.6875 6.3125L8.6875 1.3125C8.3125 0.90625 7.65625 0.90625 7.28125 1.3125C6.875 1.6875 6.875 2.34375 7.28125 2.71875L10.5625 6H1C0.4375 6 0 6.46875 0 7C0 7.5625 0.4375 8 1 8H10.5625L7.28125 11.3125C6.875 11.6875 6.875 12.3438 7.28125 12.7188C7.65625 13.125 8.3125 13.125 8.6875 12.7188L13.6875 7.71875Z"
+                                    fill="currentcolor" />
+                              </svg>
+                           </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="it-contact-map-box">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.6912416631963!2d106.7810299749204!3d-6.560603293432585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c3f8ed6256ef%3A0x8dbff6e9d8372161!2sNanoRobotic!5e0!3m2!1sid!2sid!4v1758684773374!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>         </div>
+      </div>
+      <!-- contact-area-end -->
+
+
 
    </main>
 
@@ -1592,21 +1626,101 @@
 
 
    <!-- JS here -->
-   <script src="assets/js/jquery.js"></script>
-   <script src="assets/js/waypoints.js"></script>
-   <script src="assets/js/bootstrap.bundle.min.js"></script>
-   <script src="assets/js/slick.min.js"></script>
-   <script src="assets/js/magnific-popup.js"></script>
-   <script src="assets/js/purecounter.js"></script>
-   <script src="assets/js/wow.js"></script>
-   <script src="assets/js/nice-select.js"></script>
-   <script src="assets/js/swiper-bundle.js"></script>
-   <script src="assets/js/isotope-pkgd.js"></script>
-   <script src="assets/js/imagesloaded-pkgd.js"></script>
-   <script src="assets/js/ajax-form.js"></script>
-   <script src="assets/js/main.js"></script>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/waypoints.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/magnific-popup.js"></script>
+<script src="assets/js/purecounter.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/nice-select.js"></script>
+<script src="assets/js/swiper-bundle.js"></script>
+<script src="assets/js/isotope-pkgd.js"></script>
+<script src="assets/js/imagesloaded-pkgd.js"></script>
+<script src="assets/js/ajax-form.js"></script>
+<script src="assets/js/main.js"></script>
 
 
+<script>
+(function(){
+  const CONFIG = {
+    phone: "6287790005689", // nomor CS (tanpa +)
+    defaultMessage: "Halo, saya butuh bantuan.",
+    tooltipText: "Chat via WhatsApp",
+    color: "#25D366", // warna tombol
+    size: 56, // px
+    offset: { right: 16, bottom: 16 }, // posisi tombol
+    zIndex: 99999
+  };
+
+  // --- CSS inline ---
+  const css = `
+    .wa-fab{
+      position:fixed;
+      right:${CONFIG.offset.right}px;
+      bottom:${CONFIG.offset.bottom}px;
+      width:${CONFIG.size}px;
+      height:${CONFIG.size}px;
+      border-radius:50%;
+      background:${CONFIG.color};
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.18),0 2px 8px rgba(0,0,0,.12);
+      cursor:pointer;
+      z-index:${CONFIG.zIndex};
+      transition:transform .18s ease, opacity .2s ease;
+      opacity:0;
+      transform:translateY(8px);
+    }
+    .wa-fab--in{opacity:1;transform:translateY(0);}
+    .wa-fab:active{transform:translateY(1px) scale(.985);}
+    .wa-tooltip{
+      position:absolute;
+      right:${CONFIG.size+12}px;
+      bottom:50%;
+      transform:translateY(50%);
+      background:#111827;
+      color:#fff;
+      font-size:12px;
+      border-radius:6px;
+      padding:8px 10px;
+      white-space:nowrap;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .15s ease;
+    }
+    .wa-fab:hover .wa-tooltip{opacity:1;}
+    @media(max-width:480px){.wa-tooltip{display:none;}}
+  `;
+  const style=document.createElement("style");
+  style.textContent=css;
+  document.head.appendChild(style);
+
+  // --- SVG icon ---
+  const waSVG=`<svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+    <path fill="#fff" d="M19.11 17.33c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.33-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.45-.6-.45-.16 0-.33-.02-.51-.02s-.47.07-.72.33c-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.13.18 1.91 2.92 4.63 4.09.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.58-.65 1.81-1.28.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31z"/>
+    <path fill="#fff" d="M16 3C8.82 3 3 8.82 3 16c0 2.29.62 4.45 1.7 6.31L3 29l6.87-1.73C11.66 28.37 13.76 29 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.76c-2.06 0-3.98-.62-5.57-1.67l-.4-.26-4.07 1.02 1.09-3.97-.26-.41C5.63 19.88 5 18 5 16 5 9.93 9.93 5 16 5s11 4.93 11 11-4.93 11-11 11z"/>
+  </svg>`;
+
+  // --- buat tombol ---
+  const fab=document.createElement("button");
+  fab.className="wa-fab";
+  fab.setAttribute("title","WhatsApp");
+  fab.innerHTML=`${waSVG}<span class="wa-tooltip">${CONFIG.tooltipText}</span>`;
+  fab.onclick=()=>window.open(
+    `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(CONFIG.defaultMessage)}`,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+  document.addEventListener("DOMContentLoaded",()=>{
+    document.body.appendChild(fab);
+    requestAnimationFrame(()=>fab.classList.add("wa-fab--in"));
+  });
+})();
+</script>
 
 </body>
 
