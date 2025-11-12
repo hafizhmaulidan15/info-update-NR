@@ -609,16 +609,16 @@
                background: transparent;
             }
             .box-bg {
-               width: 100%;
-               height: 100%;
+               width: 128px;
+               height: 128px;
                display: block;
             }
             .icon-img {
                position: absolute;
                top: 50%;
                left: 50%;
-               width: 32px;
-               height: 32px;
+               width: 80px;
+               height: 80px;
                transform: translate(-50%, -50%);
             }
             .icon-text h3 {
@@ -692,8 +692,8 @@
 
             <div class="icon-card">
                <div class="icon-box">
-                  <img src="assets/icons/box-orange.svg" alt="" class="box-bg">
-                  <img src="assets/icons/robot.svg" alt="" class="icon-img">
+                  <img src="assets/img/Gambar kurikulum di Website/template1(128x128).png" alt="" class="box-bg">
+                  <img src="assets/img/Gambar kurikulum di Website/6strenghtening(80x80).png" alt="" class="icon-img">
                </div>
                <div class="icon-text">
                   <h3>STEAM CAPABILITY</h3>
@@ -703,8 +703,8 @@
 
             <div class="icon-card">
                <div class="icon-box">
-                  <img src="assets/icons/box-blue.svg" alt="" class="box-bg">
-                  <img src="assets/icons/brain-circuit.svg" alt="" class="icon-img">
+                  <img src="assets/img/Gambar kurikulum di Website/template2(128x128).png" alt="" class="box-bg">
+                  <img src="assets/img/Gambar kurikulum di Website/7master(80x80).png" alt="" class="icon-img">
                </div>
                <div class="icon-text">
                   <h3>ROBOTIC SKILL</h3>
@@ -714,8 +714,8 @@
 
             <div class="icon-card">
                <div class="icon-box">
-                  <img src="assets/icons/box-pink.svg" alt="" class="box-bg">
-                  <img src="assets/icons/lightbulb-on.svg" alt="" class="icon-img">
+                  <img src="assets/img/Gambar kurikulum di Website/template3(128x128).png" alt="" class="box-bg">
+                  <img src="assets/img/Gambar kurikulum di Website/8faster(80x80).png" alt="" class="icon-img">
                </div>
                <div class="icon-text">
                   <h3>PROBLEMS SOLVING</h3>
@@ -725,8 +725,8 @@
 
             <div class="icon-card">
                <div class="icon-box">
-                  <img src="assets/icons/box-purple.svg" alt="" class="box-bg">
-                  <img src="assets/icons/gears.svg" alt="" class="icon-img">
+                  <img src="assets/img/Gambar kurikulum di Website/template4(128x128).png" alt="" class="box-bg">
+                  <img src="assets/img/Gambar kurikulum di Website/9stimulate(80x80).png" alt="" class="icon-img">
                </div>
                <div class="icon-text">
                   <h3>INNOVATION</h3>
@@ -736,8 +736,8 @@
 
             <div class="icon-card">
                <div class="icon-box">
-                  <img src="assets/icons/box-orange.svg" alt="" class="box-bg">
-                  <img src="assets/icons/handshake.svg" alt="" class="icon-img">
+                  <img src="assets/img/Gambar kurikulum di Website/template5(128x128).png" alt="" class="box-bg">
+                  <img src="assets/img/Gambar kurikulum di Website/10work(80x80).png" alt="" class="icon-img">
                </div>
                <div class="icon-text">
                   <h3>COLLABORATIVELY</h3>
@@ -782,7 +782,9 @@
                      </h1>
                   </div>
                   <div class="footer-illustration">
-                     <img src="assets/img/Gambar kurikulum di Website/karakter.png" alt="Ilustrasi Robotik">
+                  <img src="assets/img/Gambar kurikulum di Website/karakter.png" 
+                        alt="Ilustrasi Robotik" 
+                        class="footer-icon">
                   </div>
                </div>
             </div>
@@ -790,69 +792,75 @@
       </div>
       
       <style>
-         .curriculum-footer {
-         display: flex;
-         justify-content: flex-end;
-         align-items: flex-end;
-         width: 100%;
-         margin-top: 10px;
-         padding: 20px 40px;
-         }
+   .curriculum-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 100%;
+      margin-top: 10px;
+      padding: 20px 40px;
+   }
 
-         .footer-content {
-         display: flex;
-         align-items: flex-end;
-         gap: 30px;
-         }
+   .footer-content {
+      display: flex;
+      align-items: flex-end;
+      gap: 30px;
+   }
 
-         .footer-text h1 {
-         font-family: "Poppins", sans-serif;
-         text-align: right;
-         font-weight: 800;
-         line-height: 1.1;
-         margin: 0;
-         }
+   .footer-text h1 {
+      font-family: "Poppins", sans-serif;
+      text-align: right;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0;
+   }
 
-         .footer-text .title-top {
-         font-size: 58px;       /* ubah kalau mau lebih besar */
-         color: #ffffff;        /* ungu tua */
-         display: inline-block;
-         width: 100%;
-         }
+   .footer-text .title-top {
+      font-size: 58px;
+      color: #ffffff;
+      display: inline-block;
+      width: 100%;
+   }
 
-         .footer-text .title-bottom {
-         font-size: 48px;
-         color: #ffffff;
-         display: inline-block;
-         width: 100%;
-         }
+   .footer-text .title-bottom {
+      font-size: 48px;
+      color: #ffffff;
+      display: inline-block;
+      width: 100%;
+   }
 
-         .footer-illustration img {
-         width: 180px;          /* ubah sesuai ukuran gambar */
-         height: auto;
-         }
+   /* cukup 1 class untuk icon — bisa diatur ukurannya lewat variabel */
+   .footer-icon {
+      width: 300px;
+      height: auto;
+      transition: transform 0.25s ease;
+   }
 
-         /* biar responsif di layar kecil */
-         @media (max-width: 768px) {
-         .curriculum-footer {
-            justify-content: center;
-            padding: 20px;
-         }
-         .footer-content {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-         }
-         .footer-text .title-top,
-         .footer-text .title-bottom {
-            font-size: 36px;
-         }
-         .footer-illustration img {
-            width: 140px;
-         }
-         }
+   .footer-icon:hover {
+      transform: scale(1.05);
+   }
 
-      </style>
+   /* Responsif untuk layar kecil */
+   @media (max-width: 768px) {
+      .curriculum-footer {
+         justify-content: center;
+         padding: 20px;
+      }
+      .footer-content {
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+      }
+      .footer-text .title-top,
+      .footer-text .title-bottom {
+         font-size: 36px;
+      }
+      .footer-icon {
+         width: calc(var(--icon-size, 180px) * 0.8);
+      }
+   }
+   </style>
+
       <!-- service-area-end -->
 
       <!-- testimonial-area-start -->
