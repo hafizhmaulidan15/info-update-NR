@@ -1199,40 +1199,21 @@
       
       <!-- === YouTube Carousel (start) === -->
 <style>
-  /* --- CSS Carousel (Tampilan) --- */
+  /* --- CSS Carousel (Tampilan - TIDAK BERUBAH) --- */
   .it-yt-carousel { position: relative; overflow: hidden; }
   .it-ytc { position: relative; user-select: none; padding: 0 20px; } 
-  
-  /* Container Viewport */
   .it-ytc__viewport { overflow: hidden; border-radius: 14px; touch-action: pan-y; }
   .it-ytc__track { display: flex; gap: 20px; padding: 10px 5px; will-change: transform; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); }
-
-  /* Card Video */
   .it-ytc__card {
-    flex: 0 0 clamp(280px, 30vw, 380px); /* Ukuran kartu responsif */
-    background: #11151a;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 14px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    flex: 0 0 clamp(280px, 30vw, 380px);
+    background: #11151a; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; overflow: hidden; position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: transform 0.3s ease; cursor: pointer;
   }
   .it-ytc__card:hover { transform: translateY(-5px); }
-
-  /* Thumbnail Image */
-  .it-ytc__thumb {
-    position: relative; width: 100%; aspect-ratio: 16/9;
-    background: #0a0c10; display: block; overflow: hidden;
-  }
-  .it-ytc__thumb img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.5s ease;
-  }
+  .it-ytc__thumb { position: relative; width: 100%; aspect-ratio: 16/9; background: #0a0c10; display: block; overflow: hidden; }
+  .it-ytc__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
   .it-ytc__card:hover .it-ytc__thumb img { transform: scale(1.1); }
-
-  /* Tombol Play Overlay */
   .it-ytc__play { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,0.2); transition: 0.3s; }
   .it-ytc__card:hover .it-ytc__play { background: rgba(0,0,0,0.1); }
   .it-ytc__btn {
@@ -1241,34 +1222,24 @@
     cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: transform 0.2s; pointer-events: none;
   }
   .it-ytc__card:hover .it-ytc__btn { transform: scale(1.1); background: #6e4f9e; }
-
-  /* Navigasi & Modal */
   .it-ytc__arrow {
     position: absolute; top: 50%; transform: translateY(-50%);
-    width: 45px; height: 45px; border-radius: 50%;
-    background: #fff; border: 1px solid #ddd; color: #333;
-    font-size: 20px; cursor: pointer; z-index: 10;
-    display: flex; align-items: center; justify-content: center;
+    width: 45px; height: 45px; border-radius: 50%; background: #fff; border: 1px solid #ddd; color: #333;
+    font-size: 20px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s;
   }
   .it-ytc__arrow:hover { background: #6e4f9e; color: #fff; border-color: #6e4f9e; }
-  .it-ytc__arrow--left { left: 0; }
-  .it-ytc__arrow--right { right: 0; }
-
+  .it-ytc__arrow--left { left: 0; } .it-ytc__arrow--right { right: 0; }
   .it-ytc__dots { display: flex; gap: 8px; justify-content: center; margin-top: 20px; }
   .it-ytc__dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; border: none; padding: 0; cursor: pointer; transition: 0.3s; }
   .it-ytc__dot.active { background: #6e4f9e; transform: scale(1.3); }
-
   .it-ytc__modal {
-    position: fixed; inset: 0; z-index: 99999;
-    background: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
+    position: fixed; inset: 0; z-index: 99999; background: rgba(0,0,0,0.85); backdrop-filter: blur(5px);
     display: none; align-items: center; justify-content: center; padding: 20px;
   }
   .it-ytc__modal.open { display: flex; animation: fadeIn 0.3s ease; }
   .it-ytc__player-box {
-    width: 100%; max-width: 900px; aspect-ratio: 16/9;
-    background: #000; border-radius: 12px; overflow: hidden; position: relative;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 100%; max-width: 900px; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   }
   .it-ytc__close { position: absolute; top: -40px; right: 0; color: white; background: transparent; border: none; font-size: 30px; cursor: pointer; }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -1276,7 +1247,6 @@
 
 <section class="it-yt-carousel pt-100 pb-70 grey-bg">
   <div class="container text-center">
-    
     <div class="row justify-content-center mb-30">
       <div class="col-12">
         <h2 class="it-section-title mb-10">Aktifitas Kami</h2>
@@ -1286,7 +1256,6 @@
 
     <div class="it-ytc">
       <button class="it-ytc__arrow it-ytc__arrow--left" id="ytPrev">❮</button>
-
       <div class="it-ytc__viewport" id="ytViewport">
         <div class="it-ytc__track" id="ytTrack">
 
@@ -1297,35 +1266,161 @@
             </div>
           </div>
 
-          <div class="it-ytc__card" data-video-url="https://youtu.be/9bZkp7q19f0">
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/9CST3fe0Mho">
             <div class="it-ytc__thumb">
-              <img src="https://placehold.co/600x338/444/FFF?text=Video+2" alt="Thumbnail 2">
+              <img src="assets/img/carousel/5.png" alt="Thumbnail 2">
               <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
             </div>
           </div>
 
-          <div class="it-ytc__card" data-video-url="https://youtu.be/3JZ_D3ELwOQ">
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/rF4T9-g94k4">
             <div class="it-ytc__thumb">
-              <img src="https://placehold.co/600x338/555/FFF?text=Video+3" alt="Thumbnail 3">
+              <img src="assets/img/carousel/6.png" alt="Thumbnail 3">
               <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
             </div>
           </div>
 
-          <div class="it-ytc__card" data-video-url="https://youtu.be/fJ9rUzIMcZQ">
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/zdU5HF9Tmw0">
             <div class="it-ytc__thumb">
-              <img src="https://placehold.co/600x338/666/FFF?text=Video+4" alt="Thumbnail 4">
+              <img src="assets/img/carousel/7.png" alt="Thumbnail 4">
               <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
             </div>
           </div>
 
-          <div class="it-ytc__card" data-video-url="https://youtu.be/kXYiU_JCYtU">
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/watch?v=F1GjXqetiYU">
             <div class="it-ytc__thumb">
-              <img src="assets/img/yt/gambar_kamu_disini.jpg" alt="Thumbnail 5">
+              <img src="assets/img/carousel/2.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/watch?v=7jIjgv6P-iY">
+            <div class="it-ytc__thumb">
+               <img src="assets/img/carousel/8.png" alt="Thumbnail 1">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/watch?v=L09zq3ftzGE">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/9.png" alt="Thumbnail 2">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/watch?v=cNrdpbfIPv8">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/10.png" alt="Thumbnail 3">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/jUTTu5HvGbU">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/11.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/m5CVQaElpV8">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/12.png" alt="Thumbnail 4">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/mSFezIeKliI">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE (3).png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/umdGPhAm3ZI">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE (2).png" alt="Thumbnail 4">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/XpNwDh8k-2Q">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE (1).png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtu.be/Zls-7houm6M">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE.png" alt="Thumbnail 4">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/DD4bSYVIC5I">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE (6).png" alt="Thumbnail 5">
               <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
             </div>
           </div>
           
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/bo1NMDHBDJA">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE (5).png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
           </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/bo1NMDHBDJA">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/KUMPULAN GAMBAR PROJECT EXPOSE (4).png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/watch?v=uiD5GVy0Pb4">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/Kompetisi.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/shorts/DMU81szW11o">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/13.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/shorts/kfPICyhwxnM">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/kompetisi 2.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://youtube.com/shorts/mHDfcW1wLfE">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/kompetisi 3.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.youtube.com/shorts/h54aI8MJLyY">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/kompetisi 4.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+          <div class="it-ytc__card" data-video-url="https://www.instagram.com/p/CwhrBLth3Ez/">
+            <div class="it-ytc__thumb">
+              <img src="assets/img/carousel/14.png" alt="Thumbnail 5">
+              <div class="it-ytc__play"><button class="it-ytc__btn">▶</button></div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <button class="it-ytc__arrow it-ytc__arrow--right" id="ytNext">❯</button>
@@ -1343,21 +1438,23 @@
 
 <script>
 (function(){
-  // --- CONFIG SYSTEM (TIDAK PERLU DIEDIT) ---
+  // --- CONFIG SYSTEM ---
   const track = document.getElementById("ytTrack");
   const dotsContainer = document.getElementById("ytDots");
   const modal = document.getElementById("ytModal");
   const player = document.getElementById("ytPlayer");
-  const cards = track.querySelectorAll(".it-ytc__card"); // Ambil semua kartu dari HTML
+  const cards = track.querySelectorAll(".it-ytc__card"); 
   
   let index = 0;
   let itemsPerScreen = 3;
   let totalPages = 0;
   let autoPlayInterval;
 
+  // --- FIXED: Regex untuk mengenali shorts dan ID video ---
   function getYoutubeId(url){
     if(!url) return null;
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    // Regex ditambahkan '|shorts\/' agar bisa mengenali format shorts
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
   }
@@ -1369,17 +1466,27 @@
     else if(w < 1024) itemsPerScreen = 2;
     else itemsPerScreen = 3;
 
-    // Hitung jumlah halaman
     totalPages = Math.ceil(cards.length / itemsPerScreen);
     if(totalPages < 1) totalPages = 1;
 
-    // Setup Event Listener untuk setiap kartu HTML
+    // Setup Click Listener
     cards.forEach(card => {
         card.onclick = function(){
             const url = this.getAttribute("data-video-url");
             const id = getYoutubeId(url);
-            if(id) openModal(id);
-            else alert("Link YouTube tidak valid / kosong di HTML");
+
+            if(id) {
+              // Kalo YouTube (Video Biasa / Shorts), Buka di Modal
+              openModal(id);
+            } 
+            else if(url && url.startsWith("https")) {
+              // Kalo BUKAN YouTube (misal Instagram), Buka di Tab Baru
+              // Ini solusi karena Instagram tidak bisa di-embed di modal iframe sembarangan
+              window.open(url, '_blank'); 
+            }
+            else {
+              alert("Link tidak valid");
+            }
         }
     });
 
@@ -1389,7 +1496,7 @@
 
   function renderDots(){
     dotsContainer.innerHTML = "";
-    if(cards.length <= itemsPerScreen) return; // Sembunyikan dots jika item sedikit
+    if(cards.length <= itemsPerScreen) return;
     
     for(let i=0; i<totalPages; i++){
       const btn = document.createElement("button");
@@ -1407,20 +1514,19 @@
     if(index < 0) index = totalPages - 1;
     if(index >= totalPages) index = 0;
 
-    // Logika geser
-    const cardWidth = cards[0].offsetWidth + 20; // Width + Gap
+    const cardWidth = cards[0].offsetWidth + 20; 
     const move = -(index * (cardWidth * itemsPerScreen));
     track.style.transform = `translateX(${move}px)`;
 
-    // Update Dots
     Array.from(dotsContainer.children).forEach((dot, i) => {
       dot.className = `it-ytc__dot ${i === index ? 'active' : ''}`;
     });
   }
 
-  // --- Modal Logic ---
+  // --- Modal Logic (YouTube Only) ---
   function openModal(id){
     modal.classList.add("open");
+    // Embed link YouTube standard juga bisa memutar shorts
     player.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
     stopAutoPlay();
   }
@@ -1449,7 +1555,6 @@
   function resetAutoPlay(){ stopAutoPlay(); startAutoPlay(); }
 
   // --- Run ---
-  // Timeout kecil agar CSS render dulu baru JS hitung width
   setTimeout(() => {
       initCarousel();
       startAutoPlay();
