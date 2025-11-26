@@ -2018,91 +2018,87 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow sedikit diperhalus */
       cursor: pointer;
       z-index: ${CONFIG.zIndex};
-      transition: all .3s ease; /* Animasi transisi halus */
+      transition: all .3s ease;
       opacity: 0;
       transform: translateY(20px);
       border: none;
       outline: none;
     }
 
-    /* --- PENGATURAN RESPONSIVE (UKURAN TOMBOL) --- */
+    /* --- PENGATURAN UKURAN BARU (LEBIH KECIL) --- */
 
-    /* 1. Tampilan HP (Default / Layar < 768px) */
-    /* Ukuran pas di jempol, tidak menutupi konten */
+    /* 1. Tampilan HP (Default) - Ukuran Compact */
     .wa-fab {
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
+      width: 50px;  /* SEBELUMNYA 60px */
+      height: 50px; /* SEBELUMNYA 60px */
+      bottom: 15px; /* Jarak sedikit dirapatkan */
+      right: 15px;
     }
     .wa-fab svg {
-      width: 35px; 
-      height: 35px;
+      width: 28px; /* Icon ikut diperkecil proporsional */
+      height: 28px;
     }
 
-    /* 2. Tampilan Tablet & iPad (Layar >= 768px) */
-    /* Ukuran sedikit lebih besar */
+    /* 2. Tampilan Tablet - Ukuran Sedang */
     @media (min-width: 768px) {
       .wa-fab {
-        width: 75px;
-        height: 75px;
-        bottom: 30px;
-        right: 30px;
+        width: 60px;  /* SEBELUMNYA 75px */
+        height: 60px; /* SEBELUMNYA 75px */
+        bottom: 20px;
+        right: 20px;
       }
       .wa-fab svg {
-        width: 45px; 
-        height: 45px;
+        width: 35px; 
+        height: 35px;
       }
     }
 
-    /* 3. Tampilan Laptop, MacBook & Desktop (Layar >= 1024px) */
-    /* Ukuran JUMBO sesuai request */
+    /* 3. Tampilan Desktop/MacBook - Ukuran Besar (Tapi tidak Jumbo) */
     @media (min-width: 1024px) {
       .wa-fab {
-        width: 90px;
-        height: 90px;
-        bottom: 40px;
-        right: 40px;
+        width: 70px;  /* SEBELUMNYA 90px */
+        height: 70px; /* SEBELUMNYA 90px */
+        bottom: 25px;
+        right: 25px;
       }
       .wa-fab svg {
-        width: 55px; 
-        height: 55px;
+        width: 40px; 
+        height: 40px;
       }
     }
 
-    /* Pengaturan SVG Umum */
+    /* --- Akhir Pengaturan Ukuran --- */
+
     .wa-fab svg {
       fill: white;
       display: block;
       transition: transform 0.3s ease;
     }
 
-    /* Efek Hover (Membesar sedikit saat kursor di atasnya) */
     .wa-fab:hover {
       transform: scale(1.1) !important;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
-    /* Animasi Masuk */
     .wa-fab--in { opacity: 1; transform: translateY(0); }
     .wa-fab:active { transform: scale(.95) !important; }
     
-    /* --- TOOLTIP (Teks di samping tombol) --- */
+    /* Tooltip */
     .wa-tooltip {
       position: absolute;
-      right: 110%; /* Selalu muncul di sebelah kiri tombol, berapapun ukurannya */
+      right: 110%;
       top: 50%;
       transform: translateY(-50%) translateX(10px);
       background: rgba(0,0,0,0.8);
       color: #fff;
       font-family: sans-serif;
-      font-size: 14px;
+      font-size: 13px; /* Font tooltip sedikit diperkecil */
       font-weight: 500;
-      border-radius: 6px;
-      padding: 6px 12px;
+      border-radius: 5px;
+      padding: 5px 10px;
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
@@ -2110,7 +2106,6 @@
       visibility: hidden;
     }
     
-    /* Tooltip hanya muncul saat hover di layar besar (Desktop/Tablet) */
     @media (min-width: 768px) {
       .wa-fab:hover .wa-tooltip { 
         opacity: 1; 
@@ -2118,7 +2113,6 @@
         transform: translateY(-50%) translateX(0);
       }
     }
-    /* Sembunyikan tooltip di HP agar tidak mengganggu */
     @media (max-width: 767px) { 
       .wa-tooltip { display: none; } 
     }
