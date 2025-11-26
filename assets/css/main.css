@@ -1389,8 +1389,24 @@ input[type=color] {
   border: none;
 }
 
+/* Posisi saat tombol muncul */
 .scroll-top.open {
-  bottom: 80px;
+  bottom: 130px; /* Naik dari 80px ke 130px agar tidak nabrak WA */
+}
+
+/* Agar di HP tombolnya tidak terlalu ke tengah (Responsive) */
+@media (max-width: 767px) {
+  .scroll-top {
+    right: 20px !important; /* Geser lebih ke kanan di layar HP */
+    width: 35px; /* Sedikit diperkecil agar proporsional di HP */
+    height: 35px;
+    line-height: 35px;
+  }
+  
+  /* Penyesuaian posisi vertikal khusus HP jika perlu */
+  .scroll-top.open {
+    bottom: 130px; 
+  }
 }
 
 /*---------------------------------------*/
