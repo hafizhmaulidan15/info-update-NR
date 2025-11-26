@@ -943,13 +943,8 @@
     phone: "6287790005689", 
     defaultMessageOpen: "Halo NanoRobotic, saya ingin bertanya mengenai produk Anda.", 
     defaultMessageClosed: "Halo NanoRobotic, saya menghubungi di luar jam kerja. Mohon infonya.", 
-    
-    // UKURAN JUMBO (2x Lipat dari standar 60px)
-    size: 90, 
-    
     color: "#25D366",
     zIndex: 9999,
-    offset: { right: 15, bottom: 15 } // Jarak dari pojok
   };
 
   // --- Cek Jam Kerja (WIB) ---
@@ -962,6 +957,7 @@
     const minute = wibDate.getMinutes();
     const currentTime = hour + (minute / 60);
 
+    // Senin (1) s/d Jumat (5), Jam 08:30 s/d 17:00
     return (day >= 1 && day <= 5) && (currentTime >= 8.5 && currentTime < 17);
   }
 
@@ -969,68 +965,123 @@
   const currentMessage = isOpen ? CONFIG.defaultMessageOpen : CONFIG.defaultMessageClosed;
   const tooltipText = isOpen ? "Chat WhatsApp" : "Kami sedang Offline";
 
-  // --- CSS ---
+  // --- CSS RESPONSIVE ---
   const css = `
     .wa-fab {
       position: fixed;
-      right: ${CONFIG.offset.right}px;
-      bottom: ${CONFIG.offset.bottom}px;
-      width: ${CONFIG.size}px;
-      height: ${CONFIG.size}px;
       border-radius: 50%;
       background: ${CONFIG.color};
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow sedikit diperhalus */
       cursor: pointer;
       z-index: ${CONFIG.zIndex};
-      transition: transform .2s ease, opacity .2s ease;
+      transition: all .3s ease;
       opacity: 0;
       transform: translateY(20px);
       border: none;
       outline: none;
     }
-    
-    /* PENGATURAN GAMBAR BIAR GAK NGAWUR */
+
+    /* --- PENGATURAN UKURAN BARU (LEBIH KECIL) --- */
+
+    /* 1. Tampilan HP (Default) - Ukuran Compact */
+    .wa-fab {
+      width: 50px;  /* SEBELUMNYA 60px */
+      height: 50px; /* SEBELUMNYA 60px */
+      bottom: 15px; /* Jarak sedikit dirapatkan */
+      right: 15px;
+    }
     .wa-fab svg {
-        width: 60px; /* Ukuran fix untuk icon di dalam */
-        height: 60px;
-        fill: white;
-        display: block;
+      width: 28px; /* Icon ikut diperkecil proporsional */
+      height: 28px;
+    }
+
+    /* 2. Tampilan Tablet - Ukuran Sedang */
+    @media (min-width: 768px) {
+      .wa-fab {
+        width: 60px;  /* SEBELUMNYA 75px */
+        height: 60px; /* SEBELUMNYA 75px */
+        bottom: 20px;
+        right: 20px;
+      }
+      .wa-fab svg {
+        width: 35px; 
+        height: 35px;
+      }
+    }
+
+    /* 3. Tampilan Desktop/MacBook - Ukuran Besar (Tapi tidak Jumbo) */
+    @media (min-width: 1024px) {
+      .wa-fab {
+        width: 70px;  /* SEBELUMNYA 90px */
+        height: 70px; /* SEBELUMNYA 90px */
+        bottom: 25px;
+        right: 25px;
+      }
+      .wa-fab svg {
+        width: 40px; 
+        height: 40px;
+      }
+    }
+
+    /* --- Akhir Pengaturan Ukuran --- */
+
+    .wa-fab svg {
+      fill: white;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .wa-fab:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
     .wa-fab--in { opacity: 1; transform: translateY(0); }
-    .wa-fab:active { transform: translateY(2px) scale(.95); }
+    .wa-fab:active { transform: scale(.95) !important; }
     
     /* Tooltip */
     .wa-tooltip {
       position: absolute;
-      right: ${CONFIG.size + 15}px;
+      right: 110%;
       top: 50%;
-      transform: translateY(-50%);
-      background: #111;
+      transform: translateY(-50%) translateX(10px);
+      background: rgba(0,0,0,0.8);
       color: #fff;
       font-family: sans-serif;
-      font-size: 14px;
-      border-radius: 6px;
-      padding: 8px 16px;
+      font-size: 13px; /* Font tooltip sedikit diperkecil */
+      font-weight: 500;
+      border-radius: 5px;
+      padding: 5px 10px;
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
-      transition: opacity .2s;
+      transition: all .3s ease;
+      visibility: hidden;
     }
-    .wa-fab:hover .wa-tooltip { opacity: 1; }
-    @media(max-width: 480px) { .wa-tooltip { display: none; } }
+    
+    @media (min-width: 768px) {
+      .wa-fab:hover .wa-tooltip { 
+        opacity: 1; 
+        visibility: visible;
+        transform: translateY(-50%) translateX(0);
+      }
+    }
+    @media (max-width: 767px) { 
+      .wa-tooltip { display: none; } 
+    }
   `;
 
   const style = document.createElement("style");
   style.textContent = css;
   document.head.appendChild(style);
 
-  // --- SVG Icon (PATH ORIGINAL YANG PASTI BENAR) ---
+  // --- SVG Icon ---
   const waSVG = `<svg viewBox="0 0 32 32" aria-hidden="true">
-<path transform="translate(1, 1)" fill="#fff" d="M19.11 17.33c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.33-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.45-.6-.45-.16 0-.33-.02-.51-.02s-.47.07-.72.33c-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.13.18 1.91 2.92 4.63 4.09.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.58-.65 1.81-1.28.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31z"/>    <path d="M16 3C8.82 3 3 8.82 3 16c0 2.29.62 4.45 1.7 6.31L3 29l6.87-1.73C11.66 28.37 13.76 29 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.76c-2.06 0-3.98-.62-5.57-1.67l-.4-.26-4.07 1.02 1.09-3.97-.26-.41C5.63 19.88 5 18 5 16 5 9.93 9.93 5 16 5s11 4.93 11 11-4.93 11-11 11z"/>
+    <path transform="translate(1, 1)" fill="#fff" d="M19.11 17.33c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.33-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.45-.6-.45-.16 0-.33-.02-.51-.02s-.47.07-.72.33c-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.13.18 1.91 2.92 4.63 4.09.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.58-.65 1.81-1.28.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31z"/>    
+    <path d="M16 3C8.82 3 3 8.82 3 16c0 2.29.62 4.45 1.7 6.31L3 29l6.87-1.73C11.66 28.37 13.76 29 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.76c-2.06 0-3.98-.62-5.57-1.67l-.4-.26-4.07 1.02 1.09-3.97-.26-.41C5.63 19.88 5 18 5 16 5 9.93 9.93 5 16 5s11 4.93 11 11-4.93 11-11 11z"/>
   </svg>`;
 
   // --- Render ---
