@@ -6592,7 +6592,6 @@ td.product-thumbnail img {
   color: #021316;
   font-size: 19px;
   font-weight: 400;
-  text-transform: capitalize;
   line-height: 30px;
   padding-left: 30px;
   position: relative;
@@ -10475,48 +10474,199 @@ td.product-thumbnail img {
     font-size: 14px;
   }
 }
-.it-classes-meta-box {
-  padding: 25px 10px;
-  padding-bottom: 30px;
-  border-top: 1px solid rgba(245, 152, 49, 0.2);
+/* =========================================
+   1. BASE STYLES (Tampilan Default/Desktop)
+   ========================================= */
+
+/* Wrapper Kartu: Flexbox Column agar tinggi seragam */
+.it-classes-item-wrap {
+    border-radius: 10px;
+    border: 1px solid rgba(245, 152, 49, 0.2);
+    transition: 0.3s;
+    background-color: #fff;
+    
+    /* Layout agar tinggi kartu sama rata */
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
 }
-.it-classes-meta-box ul li {
-  display: inline-block;
-  list-style-type: none;
+
+.it-classes-item-wrap:hover {
+    border-color: transparent;
+    box-shadow: 0px 10px 30px 0px rgba(2, 19, 22, 0.1);
+    transform: translateY(-5px);
 }
-.it-classes-meta-box ul li:not(:last-child) {
-  margin-right: 30px;
-  padding-right: 30px;
-  border-right: 1px dashed var(--it-theme-1);
+
+/* Bagian Konten Atas (Gambar, Judul, Deskripsi) */
+.it-classes-item {
+    padding: 20px;
+    flex-grow: 1; /* Mendorong Meta Box ke bawah */
+    display: flex;
+    flex-direction: column;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
-  .it-classes-meta-box ul li:not(:last-child) {
-    margin-right: 0;
-    border-right: none;
-  }
+
+/* Gambar */
+.it-classes-thumb {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
 }
-.it-classes-meta h6 {
-  font-size: 18px;
-  font-family: var(--it-ff-heading);
+
+.it-classes-thumb img {
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .it-classes-meta h6 {
+
+.it-classes-item-wrap:hover .it-classes-thumb img {
+    transform: scale(1.1);
+}
+
+/* Judul & Deskripsi */
+.it-classes-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.it-classes-title {
+    font-size: 22px;
+    font-weight: 500; /* Kembali ke 500 (Normal Heading) */
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.it-classes-content p {
+    margin-bottom: 0;
+    color: var(--it-common-black);
     font-size: 16px;
-  }
+    line-height: 1.6;
+    
+    /* Membatasi teks panjang (opsional) */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
-@media (max-width: 767px) {
-  .it-classes-meta h6 {
-    font-size: 14px;
-  }
+
+/* =========================================
+   2. META BOX (Footer Kartu)
+   ========================================= */
+
+.it-classes-meta-box {
+    padding: 20px 10px 25px 10px;
+    border-top: 1px solid rgba(245, 152, 49, 0.2);
+    margin-top: auto; /* Menempel di bawah */
 }
+
+.it-classes-meta-box ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.it-classes-meta-box ul li {
+    flex: 1;
+    list-style: none;
+    text-align: center;
+    padding: 0 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* Garis pemisah kanan */
+    border-right: 1px dashed var(--it-theme-1);
+}
+
+.it-classes-meta-box ul li:last-child {
+    border-right: none;
+}
+
+/* --- PENGATURAN FONT (Dikembalikan ke Normal/Tipis) --- */
+
+.it-classes-meta h6 {
+    font-size: 16px;
+    font-weight: 500; /* KEMBALI KE 500 (Tidak Bold) */
+    color: #021316; /* Warna hitam default tema */
+    margin-bottom: 5px;
+    font-family: var(--it-ff-heading);
+}
+
 .it-classes-meta span {
-  font-size: 15px;
-  color: var(--it-theme-1);
-}
-@media (max-width: 767px) {
-  .it-classes-meta span {
+    display: block;
     font-size: 14px;
-  }
+    color: var(--it-theme-1); /* Warna ungu */
+    font-weight: 400; /* KEMBALI KE 400 (Normal) */
+    line-height: 1.4;
+}
+
+/* =========================================
+   3. RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* --- TABLET (Lebar 768px s/d 991px) --- */
+@media (min-width: 768px) and (max-width: 991px) {
+    .it-classes-item { padding: 20px; }
+    .it-classes-title { font-size: 20px; }
+    .it-classes-content p { font-size: 15px; }
+    .it-classes-meta h6 { font-size: 15px; }
+    .it-classes-meta span { font-size: 13px; }
+}
+
+/* --- MOBILE (Lebar di bawah 767px) --- */
+@media (max-width: 767px) {
+    .it-classes-item-wrap { margin-bottom: 30px; }
+    .it-classes-item { padding: 20px; }
+    .it-classes-title { font-size: 20px; }
+
+    /* Layout Meta Box Bertumpuk di HP */
+    .it-classes-meta-box { padding: 20px; }
+    
+    .it-classes-meta-box ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .it-classes-meta-box ul li {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px dashed rgba(110, 79, 158, 0.3);
+        padding-bottom: 15px;
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: row; /* Kiri-Kanan */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .it-classes-meta-box ul li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .it-classes-meta {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .it-classes-meta h6 {
+        margin-bottom: 0;
+        font-size: 15px;
+        font-weight: 500; /* Tetap normal di HP */
+    }
+
+    .it-classes-meta span {
+        text-align: right;
+        font-size: 15px;
+        font-weight: 400; /* Tetap normal di HP */
+    }
 }
 .it-classes-arrow-box button {
   font-size: 20px;
@@ -12359,7 +12509,7 @@ td.product-thumbnail img {
 /* == START: Custom Teaching Card Styles == */
 
 .custom-teaching-card {
-  background-color: #6b21a8; /* Warna ungu dari TeachingMethodCard.tsx */
+  background-color:var(--it-theme-2); /* Warna ungu dari TeachingMethodCard.tsx */
   color: #ffffff; /* Teks putih dari TeachingMethodCard.tsx */
   padding: 32px; /* p-8 */
   border-radius: 16px; /* rounded-2xl */
