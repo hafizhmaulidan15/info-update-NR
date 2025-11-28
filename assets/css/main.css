@@ -7386,11 +7386,11 @@ td.product-thumbnail img {
 
 .it-student-bg {
   background-color: #E7F8FE;
-  padding: 100px 70px;
+  padding: 80px 50px;
 }
 @media (max-width: 767px) {
   .it-student-bg {
-    padding: 80px 30px;
+    padding: 600px 10px;
   }
 }
 .it-student-title {
