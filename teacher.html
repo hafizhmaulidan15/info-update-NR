@@ -61,7 +61,8 @@
             </a>
          </div>
          <div class="itoffcanvas__text">
-            <p>Platform Edukasi dan Kolaborasi untuk pembelajaran Robotic, Coding & AI untuk usia 5 hingga 15 tahun. Bersama Bangun 5C Critical Thinking, Creativity, Collaboration, Communication & Character.</p>
+            <p>Platform Edukasi dan Kolaborasi untuk pembelajaran Robotic, Coding & AI untuk usia 5 hingga 15 tahun.
+               Bersama Bangun 5C Critical Thinking, Creativity, Collaboration, Communication & Character.</p>
          </div>
          <div class="it-menu-mobile"></div>
          <div class="itoffcanvas__info">
@@ -81,7 +82,8 @@
                </div>
                <div class="itoffcanvas__info-address">
                   <span>Phone</span>
-                  <a href="https://api.whatsapp.com/send/?phone=6287790005689&text&type=phone_number&app_absent=0">0877-9000-5689</a>
+                  <a
+                     href="https://api.whatsapp.com/send/?phone=6287790005689&text&type=phone_number&app_absent=0">0877-9000-5689</a>
                </div>
             </div>
             <div class="it-info-wrapper mb-20 d-flex align-items-center">
@@ -90,7 +92,8 @@
                </div>
                <div class="itoffcanvas__info-address">
                   <span>Location</span>
-                  <a href="https://maps.app.goo.gl/TZhvayfhDSmpR21D7" target="_blank">Jl. Cempaka Blok Z3 No. 1, Taman Cimanggu,Tanah Sereal Kota Bogor, Bogor 16164 Jawa Barat</a>
+                  <a href="https://maps.app.goo.gl/TZhvayfhDSmpR21D7" target="_blank">Jl. Cempaka Blok Z3 No. 1, Taman
+                     Cimanggu,Tanah Sereal Kota Bogor, Bogor 16164 Jawa Barat</a>
                </div>
             </div>
          </div>
@@ -107,13 +110,16 @@
                <div class="col-xl-8 col-lg-7 col-md-6">
                   <div class="it-header-top-left text-center text-md-start">
                      <ul>
-                        <li class="d-none d-xl-inline-block"><i class="flaticon-phone-call"></i>                                 
-                           <a href=https://api.whatsapp.com/send/?phone=6287790005689&text&type=phone_number&app_absent=0>0877-9000-5689</a>
+                        <li class="d-none d-xl-inline-block"><i class="flaticon-phone-call"></i>
+                           <a
+                              href=https://api.whatsapp.com/send/?phone=6287790005689&text&type=phone_number&app_absent=0>0877-9000-5689</a>
                         </li>
-                        <li><i class="flaticon-email"></i><a href="mailto:nano.idrobotic@gmail.com">nano.idrobotic@gmail.com</a>
+                        <li><i class="flaticon-email"></i><a
+                              href="mailto:nano.idrobotic@gmail.com">nano.idrobotic@gmail.com</a>
                         </li>
                         <li class="d-none d-xl-inline-block"><i class="flaticon-map"></i><a target="_blank"
-                              href="https://maps.app.goo.gl/6QfeAGRcxc1uLByt7">Jl. Cempaka Blok Z3 No 1, Taman Cimanggu, Tanah Sareal, Kota Bogor, Jawa Barat 16164</a></li>
+                              href="https://maps.app.goo.gl/6QfeAGRcxc1uLByt7">Jl. Cempaka Blok Z3 No 1, Taman Cimanggu,
+                              Tanah Sareal, Kota Bogor, Jawa Barat 16164</a></li>
                      </ul>
                   </div>
                </div>
@@ -146,7 +152,7 @@
                               </li>
                               <li>
                                  <a href="about-us.html">
-                                   <span>
+                                    <span>
                                        <img src="ICON/ICON/2tentangkami.svg" width="16" height="16" alt="Ikon Beranda">
                                     </span>
                                     Tentang Kami
@@ -248,9 +254,10 @@
       <!-- breadcrumb area start -->
       <div class="it-breadcrumb-area it-breadcrumb-height p-relative fix">
 
-    <img src="assets/img/bg-header/partners.png" alt="Latar Belakang Halaman" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+         <img src="assets/img/bg-header/partners.png" alt="Latar Belakang Halaman"
+            class="absolute-fill object-cover z-0">
 
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></div>
+         <div class="absolute-fill bg-black-alpha-40 z-1"></div>
          <div class="it-breadcrumb-shape-1">
             <img src="assets/img/breadcurmb/shape-1-1.png" alt="">
          </div>
@@ -667,170 +674,59 @@
    <script src="assets/js/ajax-form.js"></script>
    <script src="assets/js/main.js"></script>
 
-<script>
-(function(){
-  // --- Konfigurasi ---
-  const CONFIG = {
-    phone: "6287790005689", 
-    defaultMessageOpen: "Halo NanoRobotic, saya ingin bertanya mengenai produk Anda.", 
-    defaultMessageClosed: "Halo NanoRobotic, saya menghubungi di luar jam kerja. Mohon infonya.", 
-    color: "#25D366",
-    zIndex: 9999,
-  };
+   <script>
+      (function () {
+         // --- Konfigurasi ---
+         const CONFIG = {
+            phone: "6287790005689",
+            defaultMessageOpen: "Halo NanoRobotic, saya ingin bertanya mengenai produk Anda.",
+            defaultMessageClosed: "Halo NanoRobotic, saya menghubungi di luar jam kerja. Mohon infonya.",
+            color: "#25D366",
+            zIndex: 9999,
+         };
 
-  // --- Cek Jam Kerja (WIB) ---
-  function isBusinessOpen() {
-    const now = new Date();
-    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-    const wibDate = new Date(utc + (3600000 * 7));
-    const day = wibDate.getDay();
-    const hour = wibDate.getHours();
-    const minute = wibDate.getMinutes();
-    const currentTime = hour + (minute / 60);
+         // --- Cek Jam Kerja (WIB) ---
+         function isBusinessOpen() {
+            const now = new Date();
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const wibDate = new Date(utc + (3600000 * 7));
+            const day = wibDate.getDay();
+            const hour = wibDate.getHours();
+            const minute = wibDate.getMinutes();
+            const currentTime = hour + (minute / 60);
 
-    // Senin (1) s/d Jumat (5), Jam 08:30 s/d 17:00
-    return (day >= 1 && day <= 5) && (currentTime >= 8.5 && currentTime < 17);
-  }
+            // Senin (1) s/d Jumat (5), Jam 08:30 s/d 17:00
+            return (day >= 1 && day <= 5) && (currentTime >= 8.5 && currentTime < 17);
+         }
 
-  const isOpen = isBusinessOpen();
-  const currentMessage = isOpen ? CONFIG.defaultMessageOpen : CONFIG.defaultMessageClosed;
-  const tooltipText = isOpen ? "Chat WhatsApp" : "Kami sedang Offline";
+         const isOpen = isBusinessOpen();
+         const currentMessage = isOpen ? CONFIG.defaultMessageOpen : CONFIG.defaultMessageClosed;
+         const tooltipText = isOpen ? "Chat WhatsApp" : "Kami sedang Offline";
 
-  // --- CSS RESPONSIVE ---
-  const css = `
-    .wa-fab {
-      position: fixed;
-      border-radius: 50%;
-      background: ${CONFIG.color};
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Shadow sedikit diperhalus */
-      cursor: pointer;
-      z-index: ${CONFIG.zIndex};
-      transition: all .3s ease;
-      opacity: 0;
-      transform: translateY(20px);
-      border: none;
-      outline: none;
-    }
 
-    /* --- PENGATURAN UKURAN BARU (LEBIH KECIL) --- */
 
-    /* 1. Tampilan HP (Default) - Ukuran Compact */
-    .wa-fab {
-      width: 50px;  /* SEBELUMNYA 60px */
-      height: 50px; /* SEBELUMNYA 60px */
-      bottom: 15px; /* Jarak sedikit dirapatkan */
-      right: 15px;
-    }
-    .wa-fab svg {
-      width: 28px; /* Icon ikut diperkecil proporsional */
-      height: 28px;
-    }
-
-    /* 2. Tampilan Tablet - Ukuran Sedang */
-    @media (min-width: 768px) {
-      .wa-fab {
-        width: 60px;  /* SEBELUMNYA 75px */
-        height: 60px; /* SEBELUMNYA 75px */
-        bottom: 20px;
-        right: 20px;
-      }
-      .wa-fab svg {
-        width: 35px; 
-        height: 35px;
-      }
-    }
-
-    /* 3. Tampilan Desktop/MacBook - Ukuran Besar (Tapi tidak Jumbo) */
-    @media (min-width: 1024px) {
-      .wa-fab {
-        width: 70px;  /* SEBELUMNYA 90px */
-        height: 70px; /* SEBELUMNYA 90px */
-        bottom: 25px;
-        right: 25px;
-      }
-      .wa-fab svg {
-        width: 40px; 
-        height: 40px;
-      }
-    }
-
-    /* --- Akhir Pengaturan Ukuran --- */
-
-    .wa-fab svg {
-      fill: white;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .wa-fab:hover {
-      transform: scale(1.1) !important;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
-
-    .wa-fab--in { opacity: 1; transform: translateY(0); }
-    .wa-fab:active { transform: scale(.95) !important; }
-    
-    /* Tooltip */
-    .wa-tooltip {
-      position: absolute;
-      right: 110%;
-      top: 50%;
-      transform: translateY(-50%) translateX(10px);
-      background: rgba(0,0,0,0.8);
-      color: #fff;
-      font-family: sans-serif;
-      font-size: 13px; /* Font tooltip sedikit diperkecil */
-      font-weight: 500;
-      border-radius: 5px;
-      padding: 5px 10px;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: all .3s ease;
-      visibility: hidden;
-    }
-    
-    @media (min-width: 768px) {
-      .wa-fab:hover .wa-tooltip { 
-        opacity: 1; 
-        visibility: visible;
-        transform: translateY(-50%) translateX(0);
-      }
-    }
-    @media (max-width: 767px) { 
-      .wa-tooltip { display: none; } 
-    }
-  `;
-
-  const style = document.createElement("style");
-  style.textContent = css;
-  document.head.appendChild(style);
-
-  // --- SVG Icon ---
-  const waSVG = `<svg viewBox="0 0 32 32" aria-hidden="true">
+         // --- SVG Icon ---
+         const waSVG = `<svg viewBox="0 0 32 32" aria-hidden="true">
     <path transform="translate(1, 1)" fill="#fff" d="M19.11 17.33c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.13-1.14-.42-2.17-1.34-.8-.71-1.34-1.58-1.5-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.33-.02-.47-.07-.13-.6-1.45-.82-1.99-.22-.53-.44-.45-.6-.45-.16 0-.33-.02-.51-.02s-.47.07-.72.33c-.25.27-.95.93-.95 2.26 0 1.33.97 2.62 1.1 2.8.13.18 1.91 2.92 4.63 4.09.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.58-.65 1.81-1.28.22-.62.22-1.16.16-1.27-.07-.11-.24-.18-.51-.31z"/>    
     <path d="M16 3C8.82 3 3 8.82 3 16c0 2.29.62 4.45 1.7 6.31L3 29l6.87-1.73C11.66 28.37 13.76 29 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.76c-2.06 0-3.98-.62-5.57-1.67l-.4-.26-4.07 1.02 1.09-3.97-.26-.41C5.63 19.88 5 18 5 16 5 9.93 9.93 5 16 5s11 4.93 11 11-4.93 11-11 11z"/>
   </svg>`;
 
-  // --- Render ---
-  const fab = document.createElement("button");
-  fab.className = "wa-fab";
-  fab.innerHTML = `${waSVG}<span class="wa-tooltip">${tooltipText}</span>`;
-  
-  fab.onclick = () => window.open(
-    `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(currentMessage)}`,
-    "_blank", "noopener,noreferrer"
-  );
+         // --- Render ---
+         const fab = document.createElement("button");
+         fab.className = "wa-fab";
+         fab.innerHTML = `${waSVG}<span class="wa-tooltip">${tooltipText}</span>`;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document.body.appendChild(fab);
-    requestAnimationFrame(() => fab.classList.add("wa-fab--in"));
-  });
-})();
-</script>
+         fab.onclick = () => window.open(
+            `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(currentMessage)}`,
+            "_blank", "noopener,noreferrer"
+         );
+
+         document.addEventListener("DOMContentLoaded", () => {
+            document.body.appendChild(fab);
+            requestAnimationFrame(() => fab.classList.add("wa-fab--in"));
+         });
+      })();
+   </script>
 </body>
 
 </html>
