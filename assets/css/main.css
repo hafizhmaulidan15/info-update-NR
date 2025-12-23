@@ -1583,15 +1583,18 @@ only screen and (min-width: 768px) and (max-width: 991px),
 }
 
 /*--- end of preloader ---*/
+/*--- end of preloader ---*/
 .scroll-top {
   width: 40px;
   height: 40px;
   line-height: 40px;
   position: fixed;
   bottom: -10%;
-  right: 50px;
+  right: 40px;
+  /* Aligned with WA button center (approx) */
   font-size: 16px;
-  z-index: 9;
+  z-index: 999;
+  /* Ensure it's above other elements but below modal */
   text-align: center;
   border-radius: 50%;
   color: var(--it-common-white);
@@ -1603,24 +1606,22 @@ only screen and (min-width: 768px) and (max-width: 991px),
 
 /* Posisi saat tombol muncul */
 .scroll-top.open {
-  bottom: 130px;
-  /* Naik dari 80px ke 130px agar tidak nabrak WA */
+  bottom: 110px;
+  /* Above the WA button */
 }
 
 /* Agar di HP tombolnya tidak terlalu ke tengah (Responsive) */
 @media (max-width: 767px) {
   .scroll-top {
     right: 20px !important;
-    /* Geser lebih ke kanan di layar HP */
-    width: 35px;
-    /* Sedikit diperkecil agar proporsional di HP */
-    height: 35px;
-    line-height: 35px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
   }
 
-  /* Penyesuaian posisi vertikal khusus HP jika perlu */
   .scroll-top.open {
-    bottom: 130px;
+    bottom: 90px;
+    /* Adjusted for mobile WA button height */
   }
 }
 
