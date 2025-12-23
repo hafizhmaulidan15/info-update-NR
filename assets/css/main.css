@@ -15069,7 +15069,6 @@ only screen and (min-width: 768px) and (max-width: 991px),
 }
 
 .it-ytc__card {
-  flex: 0 0 clamp(280px, 30vw, 380px);
   background: #11151a;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
@@ -15078,6 +15077,26 @@ only screen and (min-width: 768px) and (max-width: 991px),
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   cursor: pointer;
+
+  /* Responsive Width Logic to match JS itemsPerScreen */
+  flex-shrink: 0;
+  flex-grow: 0;
+  /* Default Mobile (1 item) */
+  flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  .it-ytc__card {
+    /* Tablet (2 items) -> (100% - 20px gap) / 2 */
+    flex-basis: calc((100% - 20px) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .it-ytc__card {
+    /* Desktop (3 items) -> (100% - 40px gap) / 3 */
+    flex-basis: calc((100% - 40px) / 3);
+  }
 }
 
 .it-ytc__card:hover {
