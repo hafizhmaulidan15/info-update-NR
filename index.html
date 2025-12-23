@@ -1259,12 +1259,12 @@
       <!-- === YouTube Carousel (start) === -->
       <!-- YouTube Carousel Style moved to main.css -->
 
-      <section class="it-yt-carousel pt-100 pb-70 grey-bg">
+      <section class="it-yt-carousel pt-100 pb-70" style="background-color: #5f438a;">
          <div class="container text-center">
             <div class="row justify-content-center mb-30">
                <div class="col-12">
-                  <h2 class="it-section-title mb-10 text-purple-dark">Aktivitas Kami</h2>
-                  <p class="it-section-sub text-purple-dark">Klik video di bawah ini untuk menonton</p>
+                  <h2 class="it-section-title mb-10 text-white">Aktivitas Kami</h2>
+                  <p class="it-section-sub text-white">Klik video di bawah ini untuk menonton</p>
                </div>
             </div>
 
@@ -1806,34 +1806,34 @@
                         <div class="row">
                            <div class="col-md-6 mb-20">
                               <div class="it-contact-input-box">
-                                 <input type="text" placeholder="Nama:">
+                                 <input type="text" id="index-name" placeholder="Nama:">
                               </div>
                            </div>
                            <div class="col-md-6 mb-20">
                               <div class="it-contact-input-box">
-                                 <input type="text" placeholder="Tujuan:">
+                                 <input type="text" id="index-purpose" placeholder="Tujuan:">
                               </div>
                            </div>
                            <div class="col-md-6 mb-20">
                               <div class="it-contact-input-box">
-                                 <input type="email" placeholder="Alamat Email:">
+                                 <input type="email" id="index-email" placeholder="Alamat Email:">
                               </div>
                            </div>
                            <div class="col-md-6 mb-20">
                               <div class="it-contact-input-box">
-                                 <input type="text" placeholder="Nomor:">
+                                 <input type="text" id="index-phone" placeholder="Nomor:">
                               </div>
                            </div>
                            <div class="col-md-12 mb-20">
                               <div class="it-contact-textarea-box">
-                                 <textarea placeholder="Tulis Disini..."></textarea>
+                                 <textarea id="index-message" placeholder="Tulis Disini..."></textarea>
                               </div>
                            </div>
                         </div>
                      </form>
                      <div class="it-contact-button">
-                        <a class="it-btn theme-style circle-effect"
-                           href="https://api.whatsapp.com/send/?phone=6287790005689&text&type=phone_number&app_absent=0">
+                        <a class="it-btn theme-style circle-effect" href="javascript:void(0)"
+                           onclick="sendIndexFormToWhatsApp()">
                            <span>BOOK FREE TRIAL
                               <svg width="15" height="14" viewBox="0 0 15 14" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -2054,6 +2054,33 @@
    <script src="assets/js/imagesloaded-pkgd.js"></script>
    <script src="assets/js/ajax-form.js"></script>
    <script src="assets/js/main.js"></script>
+
+   <script>
+      function sendIndexFormToWhatsApp() {
+         var name = document.getElementById("index-name").value;
+         var purpose = document.getElementById("index-purpose").value;
+         var email = document.getElementById("index-email").value;
+         var phone = document.getElementById("index-phone").value;
+         var message = document.getElementById("index-message").value;
+
+         if (name === "" || message === "") {
+            alert("Harap isi Nama dan Pesan!");
+            return;
+         }
+
+         var formattedMessage = "Halo NanoRobotic, saya ingin menghubungi via Contact Form (Home) website.\n\n" +
+            "Nama: " + name + "\n" +
+            "Tujuan: " + purpose + "\n" +
+            "Email: " + email + "\n" +
+            "No. HP: " + phone + "\n" +
+            "Pesan: " + message;
+
+         var encodedMessage = encodeURIComponent(formattedMessage);
+         var whatsappUrl = "https://api.whatsapp.com/send/?phone=6287790005689&text=" + encodedMessage + "&type=phone_number&app_absent=0";
+
+         window.open(whatsappUrl, "_blank");
+      }
+   </script>
 
 
    <script>
