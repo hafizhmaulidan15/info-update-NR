@@ -15591,3 +15591,26 @@ only screen and (min-width: 768px) and (max-width: 991px),
 }
 
 /* == END: Common Utilities == */
+/* Enforce consistent size for Partner/Teacher images */
+.it-team-2-thumb img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Enforce consistent height for Partner/Teacher title box (Align heights) */
+.it-team-2-author-info {
+  min-height: 140px;
+  /* Force minimum height to accommodate varying title lengths */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Enforce consistent size for Brand/Logo images */
+.it-brand-item img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  max-width: 100%;
+}
